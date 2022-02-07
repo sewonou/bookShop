@@ -1,0 +1,239 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    <!-- cards -->
+    <div class="cardBox">
+        <div class="card">
+            <div>
+                <div class="numbers">1,504</div>
+                <div class="cardName">Daily views</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="eye-outline"></ion-icon>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">88</div>
+                <div class="cardName">Sales</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
+
+
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">284</div>
+                <div class="cardName">Comments</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">$7,889</div>
+                <div class="cardName">Earnings</div>
+            </div>
+            <div class="iconBx">
+                <ion-icon name="cash-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="details">
+        <!-- order detail list-->
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Recent Orders</h2>
+                <a href="#" class="btn">View All</a>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Payment</td>
+                    <td>Status</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Star Refrigirator</td>
+                    <td>$1 200</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Beef</td>
+                    <td>$120</td>
+                    <td>Paid</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>Car extractor</td>
+                    <td>$1 400</td>
+                    <td>Paid</td>
+                    <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                    <td>Music Room</td>
+                    <td>$548</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">Inprogress</span></td>
+                </tr>
+                <tr>
+                    <td>Door</td>
+                    <td>$1 478</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>$178</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Key Board</td>
+                    <td>$87</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Microdoft Server</td>
+                    <td>$78</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr><tr>
+                    <td>Computer</td>
+                    <td>$ 1200</td>
+                    <td>Paid</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>Yogourt</td>
+                    <td>$789</td>
+                    <td>Paid</td>
+                    <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                    <td>Baby Care</td>
+                    <td>$1 254</td>
+                    <td>Paid</td>
+                    <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                    <td>Opel Car</td>
+                    <td>$1 478</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Cell Phone</td>
+                    <td>$154</td>
+                    <td>Paid</td>
+                    <td><span class="status inprogress">Inprogress</span></td>
+                </tr>
+                <tr>
+                    <td>Watch</td>
+                    <td>$145</td>
+                    <td>Paid</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Book </td>
+                    <td>$147</td>
+                    <td>Paid</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>Bed</td>
+                    <td>$147</td>
+                    <td>DUe</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                    <td>Coffe Machine</td>
+                    <td>$789</td>
+                    <td>Paid</td>
+                    <td><span class="status return">Return</span></td>
+                </tr>
+                <tr>
+                    <td>Star Refrigirator</td>
+                    <td>$478</td>
+                    <td>Due</td>
+                    <td><span class="status inprogress">Inprogress</span></td>
+                </tr>
+                <tr>
+                    <td>Elegant room</td>
+                    <td>$89</td>
+                    <td>Due</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- New Customers  -->
+        <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Recent Customers </h2>
+            </div>
+            <table>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img1.jpg" alt=""></div></td>
+                    <td><h4>David <br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img2.jpg" alt=""></div></td>
+                    <td><h4>Galileo <br><span>Togo</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img3.jpg" alt=""></div></td>
+                    <td><h4>Faouzia <br><span>Zlgery</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img4.jpg" alt=""></div></td>
+                    <td><h4>Remy <br><span>Allemagne</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img5.jpg" alt=""></div></td>
+                    <td><h4>Billy <br><span>Usa</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img6.jpg" alt=""></div></td>
+                    <td><h4>Kossivi <br><span>Ghana</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img7.jpg" alt=""></div></td>
+                    <td><h4>Edmond <br><span>Bénin</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img8.jpg" alt=""></div></td>
+                    <td><h4>Willy <br><span>Côte d'ivoire</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img9.jpg" alt=""></div></td>
+                    <td><h4>Samuel <br><span>Cameroun</span></h4></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBx"><img src="img/img10.jpg" alt=""></div></td>
+                    <td><h4>Sallah <br><span>Egypte</span></h4></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+{% endblock %}
