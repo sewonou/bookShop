@@ -1,0 +1,44 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <!-- order detail list-->
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Liste des utilisateurs</h2>
+                <a href="{{ path('admin_user_add') }}" class="btn">Créer un nouveau utilisateur</a>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <td>Login</td>
+                    <td>Roles</td>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.login }}</td>
+                    <td>
+
+                        {% for role in user.roles %}
+                        {{ role }},
+                        {% endfor %}
+                    </td>
+
+                    <td>
+                    <td class="row-actions">
+                        <a href="{{ path('admin_user_edit', {'id': user.id}) }}"><ion-icon name="create-outline"></ion-icon></a>
+                        <a class="danger" href="{{ path('admin_user_delete', {'id':user.id}) }}" onclick="return confirm('Voulez vous vraiment supprimer {{ user.login }}')"><ion-icon name="trash-outline" style="color: #AA3333"></ion-icon></a>
+                    </td>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

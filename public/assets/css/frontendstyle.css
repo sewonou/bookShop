@@ -334,7 +334,7 @@ section{
 
 .icons-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap:1.5rem;
 }
 
@@ -342,7 +342,7 @@ section{
     display: flex;
     align-items: center;
     gap:1.5rem;
-    padding:2rem 0;
+    padding:1rem 0;
 }
 
 .icons-container .icons i{

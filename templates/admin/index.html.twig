@@ -4,236 +4,416 @@
 
 {% block body %}
 
-    <!-- cards -->
-    <div class="cardBox">
-        <div class="card">
-            <div>
-                <div class="numbers">1,504</div>
-                <div class="cardName">Daily views</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="eye-outline"></ion-icon>
-            </div>
+<!-- Right Side Content Start -->
+<section id="content" class="seipkon-content-wrapper">
+    <div class="page-content">
+        <div class="container-fluid">
 
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="numbers">88</div>
-                <div class="cardName">Sales</div>
+            <!-- Breadcromb Row Start -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-area">
+                        <div class="row">
+                            <div class="col-md-6  col-sm-6">
+                                <div class="seipkon-breadcromb-left">
+                                    <h3>Dashboard</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="seipkon-breadcromb-right">
+                                    <ul>
+                                        <li><a href="index.html">home</a></li>
+                                        <li>dashboard</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="iconBx">
-                <ion-icon name="cart-outline"></ion-icon>
+            <!-- End Breadcromb Row -->
+
+            <!-- Widget Row Start -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="clock" class="widget_card alert">
+                        <div class="widget_card_header">
+                          <span class="widget_close" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                          <i class="fa fa-times"></i>
+                          </span>
+                        </div>
+                        <div class="widget_card_body">
+                            <p class="date">{{ "{{ date }}" }}</p>
+                            <h3 class="time">{{ "{{ time }}" }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-3">
+                    <div id="widget_visitor" class="widget_card alert">
+                        <div class="widget_card_header">
+                          <span class="widget_close" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                          <i class="fa fa-times"></i>
+                          </span>
+                        </div>
+                        <div class="widget_card_body">
+                            <div class="widget_icon">
+                                <i class="fa fa-eye"></i>
+                            </div>
+                            <div class="widget_text">
+                                <h3 class="count">12023</h3>
+                                <p>Total visitor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-3">
+                    <div id="widget_user" class="widget_card alert">
+                        <div class="widget_card_header">
+                          <span class="widget_close" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                          <i class="fa fa-times"></i>
+                          </span>
+                        </div>
+                        <div class="widget_card_body">
+                            <div class="widget_icon">
+                                <i class="fa fa-users"></i>
+                            </div>
+                            <div class="widget_text">
+                                <h3 class="count">739</h3>
+                                <p>Registred users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-3">
+                    <div id="widget_profits" class="widget_card alert">
+                        <div class="widget_card_header">
+                          <span class="widget_close" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                          <i class="fa fa-times"></i>
+                          </span>
+                        </div>
+                        <div class="widget_card_body">
+                            <div class="widget_icon">
+                                <i class="fa fa-flask"></i>
+                            </div>
+                            <div class="widget_text">
+                                <h3>$<span class="count">2537</span></h3>
+                                <p>Monthly Profits</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
             </div>
+            <!-- End Widget Row -->
 
 
-        </div>
 
-        <div class="card">
-            <div>
-                <div class="numbers">284</div>
-                <div class="cardName">Comments</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="chatbubbles-outline"></ion-icon>
-            </div>
+            <!-- Widget Row Start -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="widget_card_two alert">
+                        <div class="widget_card_header">
+                            <h3>Invoice statement</h3>
+                            <ul>
+                                <li>
+                                    <a class="widget_card_accordion" data-toggle="collapse" href="#invoice_statement" role="button" aria-expanded="false" aria-controls="invoice_statement"></a>
+                                </li>
+                                <li>
+                                    <a  href="#" class="widget_close_two" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget_card_body collapse in" id="invoice_statement">
+                            <div class="table-responsive">
+                                <table id="invoice-list" class="table display table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Invoice</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Issue date</th>
+                                        <th>Due date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>#854</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$340</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>03-11-2016</td>
+                                        <td>15-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#575</td>
+                                        <td>#sale IVIP13734335</td>
+                                        <td>$225</td>
+                                        <td>
+                                            <span class="label label-warning">cancel</span>
+                                        </td>
+                                        <td>04-11-2016</td>
+                                        <td>16-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#782</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$320</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>06-11-2016</td>
+                                        <td>11-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#822</td>
+                                        <td>#sale IVIP13444036</td>
+                                        <td>$182</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>08-11-2016</td>
+                                        <td>20-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#860</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$340</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>11-11-2016</td>
+                                        <td>10-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#455</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$330</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>18-11-2016</td>
+                                        <td>13-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#854</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$340</td>
+                                        <td>
+                                            <span class="label label-success">due</span>
+                                        </td>
+                                        <td>19-11-2016</td>
+                                        <td>12-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#390</td>
+                                        <td>#sale IVIP13444036</td>
+                                        <td>$350</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>01-11-2016</td>
+                                        <td>10-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#432</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$770</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>01-11-2016</td>
+                                        <td>09-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#401</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$228</td>
+                                        <td>
+                                            <span class="label label-info">pending</span>
+                                        </td>
+                                        <td>05-11-2016</td>
+                                        <td>21-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#782</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$320</td>
+                                        <td>
+                                            <span class="label label-info">pending</span>
+                                        </td>
+                                        <td>06-11-2016</td>
+                                        <td>11-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#822</td>
+                                        <td>#sale IVIP13444036</td>
+                                        <td>$182</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>08-11-2016</td>
+                                        <td>20-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#860</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$340</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>11-11-2016</td>
+                                        <td>10-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#455</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$330</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>18-11-2016</td>
+                                        <td>13-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#854</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$340</td>
+                                        <td>
+                                            <span class="label label-success">due</span>
+                                        </td>
+                                        <td>19-11-2016</td>
+                                        <td>12-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#390</td>
+                                        <td>#sale IVIP13444036</td>
+                                        <td>$350</td>
+                                        <td>
+                                            <span class="label label-danger">due</span>
+                                        </td>
+                                        <td>01-11-2016</td>
+                                        <td>10-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#432</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$770</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>01-11-2016</td>
+                                        <td>09-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#401</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$228</td>
+                                        <td>
+                                            <span class="label label-warning">cancel</span>
+                                        </td>
+                                        <td>05-11-2016</td>
+                                        <td>21-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#122</td>
+                                        <td>#sale IVIP13444036</td>
+                                        <td>$410</td>
+                                        <td>
+                                            <span class="label label-success">due</span>
+                                        </td>
+                                        <td>07-11-2016</td>
+                                        <td>17-10-2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1003</td>
+                                        <td>#support sale IVIP13444036</td>
+                                        <td>$395</td>
+                                        <td>
+                                            <span class="label label-success">paid</span>
+                                        </td>
+                                        <td>30-11-2016</td>
+                                        <td>02-10-2016</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
 
-        </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-4">
+                    <div class="widget_card_two alert">
+                        <div class="widget_card_header">
+                            <h3>Campaign Performance</h3>
+                            <ul>
+                                <li>
+                                    <a class="widget_card_accordion" data-toggle="collapse" href="#Campaign" role="button" aria-expanded="false" aria-controls="Campaign"></a>
+                                </li>
+                                <li>
+                                    <a  href="#" class="widget_close_two" data-toggle="tooltip" title="Remove" data-dismiss="alert" aria-label="close">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget_card_body collapse in" id="Campaign">
+                            <div class="progress-list">
+                                <div class="progress-box">
+                                    <p class="progress-title">Facebook Campaign</p>
+                                    <p class="progress-size">70%</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-box">
+                                    <p class="progress-title">Twitter Campaign</p>
+                                    <p class="progress-size">80%</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-box">
+                                    <p class="progress-title">Instagram Campaign</p>
+                                    <p class="progress-size">90%</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-box">
+                                    <p class="progress-title">Conventional Media</p>
+                                    <p class="progress-size">100%</p>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Widget Row -->
 
-        <div class="card">
-            <div>
-                <div class="numbers">$7,889</div>
-                <div class="cardName">Earnings</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="cash-outline"></ion-icon>
-            </div>
         </div>
     </div>
 
+    <!-- Footer Area Start -->
+    <footer class="seipkon-footer-area">
+        <p>Seipkon - Bootstrap Admin Template by <a href="#">Themescare</a></p>
+    </footer>
+    <!-- End Footer Area -->
+
+</section>
+<!-- End Right Side Content -->
 
 
-    <div class="details">
-        <!-- order detail list-->
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Recent Orders</h2>
-                <a href="#" class="btn">View All</a>
-            </div>
-            <table>
-                <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Payment</td>
-                    <td>Status</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Star Refrigirator</td>
-                    <td>$1 200</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Beef</td>
-                    <td>$120</td>
-                    <td>Paid</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>Car extractor</td>
-                    <td>$1 400</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Music Room</td>
-                    <td>$548</td>
-                    <td>Paid</td>
-                    <td><span class="status inprogress">Inprogress</span></td>
-                </tr>
-                <tr>
-                    <td>Door</td>
-                    <td>$1 478</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Mouse</td>
-                    <td>$178</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Key Board</td>
-                    <td>$87</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Microdoft Server</td>
-                    <td>$78</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr><tr>
-                    <td>Computer</td>
-                    <td>$ 1200</td>
-                    <td>Paid</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>Yogourt</td>
-                    <td>$789</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Baby Care</td>
-                    <td>$1 254</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Opel Car</td>
-                    <td>$1 478</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Cell Phone</td>
-                    <td>$154</td>
-                    <td>Paid</td>
-                    <td><span class="status inprogress">Inprogress</span></td>
-                </tr>
-                <tr>
-                    <td>Watch</td>
-                    <td>$145</td>
-                    <td>Paid</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Book </td>
-                    <td>$147</td>
-                    <td>Paid</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>Bed</td>
-                    <td>$147</td>
-                    <td>DUe</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                <tr>
-                    <td>Coffe Machine</td>
-                    <td>$789</td>
-                    <td>Paid</td>
-                    <td><span class="status return">Return</span></td>
-                </tr>
-                <tr>
-                    <td>Star Refrigirator</td>
-                    <td>$478</td>
-                    <td>Due</td>
-                    <td><span class="status inprogress">Inprogress</span></td>
-                </tr>
-                <tr>
-                    <td>Elegant room</td>
-                    <td>$89</td>
-                    <td>Due</td>
-                    <td><span class="status delivered">Delivered</span></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- New Customers  -->
-        <div class="recentCustomers">
-            <div class="cardHeader">
-                <h2>Recent Customers </h2>
-            </div>
-            <table>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img1.jpg" alt=""></div></td>
-                    <td><h4>David <br><span>Italy</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img2.jpg" alt=""></div></td>
-                    <td><h4>Galileo <br><span>Togo</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img3.jpg" alt=""></div></td>
-                    <td><h4>Faouzia <br><span>Zlgery</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img4.jpg" alt=""></div></td>
-                    <td><h4>Remy <br><span>Allemagne</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img5.jpg" alt=""></div></td>
-                    <td><h4>Billy <br><span>Usa</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img6.jpg" alt=""></div></td>
-                    <td><h4>Kossivi <br><span>Ghana</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img7.jpg" alt=""></div></td>
-                    <td><h4>Edmond <br><span>Bénin</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img8.jpg" alt=""></div></td>
-                    <td><h4>Willy <br><span>Côte d'ivoire</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img9.jpg" alt=""></div></td>
-                    <td><h4>Samuel <br><span>Cameroun</span></h4></td>
-                </tr>
-                <tr>
-                    <td width="60px"><div class="imgBx"><img src="img/img10.jpg" alt=""></div></td>
-                    <td><h4>Sallah <br><span>Egypte</span></h4></td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
 {% endblock %}

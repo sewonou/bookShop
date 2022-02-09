@@ -304,11 +304,21 @@ body
     /*margin-top: 10px;*/
 }
 
-.details .recentOrders
+.content
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-gap: 30px;
+    /*margin-top: 10px;*/
+}
+
+.details .recentOrders,
+.content .recentOrders
 {
     position: relative;
     display: grid;
-    min-height: 500px;
     background: var(--white);
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0,0,0,0.08);
@@ -337,25 +347,29 @@ body
     border-radius: 6px;
 }
 
-.details table
+.details table,
+.content table
 {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.details table thead td
+.details table thead td,
+.content table thead td
 {
     font-weight: 600;
 }
 
-.details .recentOrders table tr
+.details .recentOrders table tr,
+.content .recentOrders table tr
 {
     color: var(--black1);
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.details .recentOrders table tr:last-child
+.details .recentOrders table tr:last-child,
+.content .recentOrders table tr:last-child
 {
     border-bottom: none;
 }
@@ -366,17 +380,20 @@ body
     color: var(--white);
 }
 
-.details .recentOrders table tr td
+.details .recentOrders table tr td,
+.content .recentOrders table tr td
 {
     padding: 10px;
 }
 
-.details .recentOrders table tr td:last-child
+.details .recentOrders table tr td:last-child,
+.content .recentOrders table tr td:last-child
 {
     text-align: end;
 }
 
 .details .recentOrders table tr td:nth-child(2)
+
 {
     text-align: end;
 }
@@ -511,6 +528,9 @@ padding:  2px 4px;
 
 @media(max-width: 768px)  {
     .details{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .detailsAll{
         grid-template-columns: repeat(1,1fr);
     }
     .recentOrders{

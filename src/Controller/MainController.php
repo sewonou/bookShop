@@ -16,17 +16,7 @@ class MainController extends AbstractController
      */
     public function index(): Response
     {
-        /*dump($this->getUser());
-        die();*/
-        if($this->getUser() === null)
-            return $this->redirectToRoute('main');
-        if($this->getUser()->hasRole('ROLE_ADMIN'))
-            return $this->redirect($this->generateUrl('admin'));
-
-        elseif($this->getUser()->hasRole('ROLE_USER'))
-            return $this->redirect($this->generateUrl('main'));
-        elseif($this->getUser() === null)
-            return $this->redirectToRoute('main');
+        return $this->redirectToRoute('main');
     }
 
 
@@ -54,18 +44,33 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("", name="bookStore")
+     * @Route("/main/store/{slug}", name="bookStore")
      */
-    public function bookStore()
+    public function bookStore(): Response
     {
-        
+        return $this->render('main/books/index.html.twig', [
+
+        ]);
     }
+
 
     /**
      * @Route("", name="searchResult")
      */
-    public function searchResult()
+    public function searchResult(): Response
+    {
+        return $this->render('main/search/index.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("", name="searchResult")
+     * @return Response
+     */
+    public function userCart(): Response
     {
 
     }
+
 }

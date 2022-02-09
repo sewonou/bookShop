@@ -1,0 +1,48 @@
+{% extends 'admin/base.html.twig' %}
+{% block title %}
+
+{% endblock %}
+{% block body %}
+    <div class="content">
+        <!-- order detail list-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="element-wrapper">
+                    <div class="element-box">
+                        <h5 class="form-header">
+                            Enregistrement d'un nouvel utilisateur
+                        </h5>
+                        {{ form_start(form) }}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <fieldset class="form-group">
+                                    <legend><span>Identifiant</span></legend>
+                                    {{ form_row(form.login) }}
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            {{ form_row(form.hash) }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-9">
+                                            {{ form_row(form.userRoles,  {'attr': {'class': 'select2'}}) }}
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="form-buttons-w text-right compact">
+                            <button class="btn btn-primary" type="submit"> Valider</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

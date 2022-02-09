@@ -2,47 +2,95 @@
 {# Template de base ADMIN#}
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Book Shop - {% block title %}Welcome!{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('') }}">
-        <link rel="stylesheet" href="{{ asset('') }}">
-        {% block stylesheets %}{% endblock %}
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Seipkon is a Premium Quality Admin Site Responsive Template" />
+        <meta name="keywords" content="admin template, admin, admin dashboard, cms, Seipkon Admin, premium admin templates, responsive admin, panel, software, ui, web app, application" />
+        <meta name="author" content="Themescare">
+        <!-- Title -->
+        <title>Admin Book Shop - {% block title %}Welcome!{% endblock %}</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/bootstrap.min.css') }}">
+        <!-- Font awesome CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/font-awesome/font-awesome.min.css') }}">
+        <!-- Themify Icon CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/themify-icons/themify-icons.css') }}">
+        <!-- Perfect Scrollbar CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css') }}">
+        <!-- Jvector CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/jvector/css/jquery-jvectormap.css') }}">
+        <!-- Daterange CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/css/daterangepicker.css') }}">
+        <!-- Bootstrap-select CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-select/css/bootstrap-select.min.css') }}">
+        <!-- Summernote CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/css/summernote.css') }}">
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/seipkon.css') }}">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
     </head>
     <body>
-        <div class="container">
-            {% include 'admin/partials/navigation.html.twig' %}
-            <div class="main">
-                {% include 'admin/partials/topbar.html.twig' %}
-                {% block body %}
-                {% endblock %}
-            </div>
+        <!-- Start Page Loading -->
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
         </div>
+        <!-- End Page Loading -->
+
+        <!-- Wrapper Start -->
+        <div class="wrapper">
+            {% include 'admin/partials/topbar.html.twig' %}
+
+            {% include 'admin/partials/navigation.html.twig' %}
+            {% block body %}
+
+            {% endblock %}
+
+
+        </div>
+        <!-- End Wrapper -->
         {% block javascripts %}{% endblock %}
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script>
-            //MenuToggle
-            let toggle = document.querySelector('.toggle');
-            let navigation = document.querySelector('.navigation');
-            let main = document.querySelector('.main');
-
-            toggle.onclick = function(){
-                navigation.classList.toggle('active');
-                main.classList.toggle('active');
-            };
-
-
-            // add hovered class in selected list item
-            let list = document.querySelectorAll('.navigation li');
-            function  activeLink() {
-                list.forEach((item) =>
-                    item.classList.remove('hovered'));
-                this.classList.add('hovered');
-            }
-            list.forEach((item) =>
-                item.addEventListener('mouseover', activeLink));
-        </script>
+        <!-- jQuery -->
+        <script src="{{ asset('assets/js/jquery-3.1.0.min.js') }}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{{ asset('assets/plugins/bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Bootstrap-select JS -->
+        <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+        <!-- Daterange JS -->
+        <script src="{{ asset('assets/plugins/daterangepicker/js/moment.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/daterangepicker/js/daterangepicker.js') }}"></script>
+        <!-- Jvector JS -->
+        <script src="{{ asset('assets/plugins/jvector/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jvector/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+        <script src="{{ asset('assets/plugins/jvector/js/jvector-init.js') }}"></script>
+        <!-- Raphael JS -->
+        <script src="{{ asset('assets/plugins/raphael/js/raphael.min.js') }}"></script>
+        <!-- Morris JS -->
+        <script src="{{ asset('assets/plugins/morris/js/morris.min.js') }}"></script>
+        <!-- Sparkline JS -->
+        <script src="{{ asset('assets/plugins/sparkline/js/jquery.sparkline.js') }}"></script>
+        <!-- Chart JS -->
+        <script src="{{ asset('assets/plugins/charts/js/Chart.js') }}"></script>
+        <!-- Datatables -->
+        <script src="{{ asset('assets/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+        <!-- Perfect Scrollbar JS -->
+        <script src="{{ asset('assets/plugins/perfect-scrollbar/jquery-perfect-scrollbar.min.js') }}"></script>
+        <!-- Vue JS -->
+        <script src="{{ asset('assets/plugins/vue/vue.min.js') }}"></script>
+        <!-- Summernote JS -->
+        <script src="{{ asset('assets/plugins/summernote/js/summernote.js') }}"></script>
+        <script src="{{ asset('assets/plugins/summernote/js/custom-summernote.js') }}"></script>
+        <!-- Dashboard JS -->
+        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <!-- Custom JS -->
+        <script src="{{ asset('assets/js/seipkon.js') }}"></script>
     </body>
 </html>
