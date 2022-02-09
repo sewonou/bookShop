@@ -3,42 +3,96 @@
 {% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <div class="content">
-        <!-- order detail list-->
-        <div class="recentOrders">
-            <div class="cardHeader">
-                <h2>Liste des utilisateurs</h2>
-                <a href="{{ path('admin_user_add') }}" class="btn">Créer un nouveau utilisateur</a>
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- Breadcromb Row Start -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="breadcromb-area">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="seipkon-breadcromb-left">
+                                        <h3>Liste des utilisateurs</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="seipkon-breadcromb-right">
+                                        <ul>
+                                            <li><a href="{{ path('admin') }}">Tableau de bord</a></li>
+                                            <li>Utilisateurs</li>
+                                            <li>Tous les utilisateurs</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Breadcromb Row -->
+
+
+                <!-- Advance Table Row Start -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-box">
+                            <div class="datatables-example-heading">
+                                <h3>Tous les utilisteurs de l'application</h3>
+                            </div>
+                            <p>Liste de tous les utilisateurs de la plateforme</p>
+                            <div class="advance-table">
+                                <table id="responsive_datatables_example" class="table display table-striped table-bordered responsive nowrap">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom d'utilisateur</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                   <tbody>
+                                   {% for user in users %}
+                                   <tr>
+                                       <td>{{ user.login }}</td>
+                                       <td>
+                                           {% for role in user.roles %}
+                                           {{ role }}{% if not loop.last %} ; {% else %}.{% endif %}
+                                           {% endfor %}
+                                       </td>
+                                       <td style="text-align: end; width: 20px">
+                                           <a href="{{ path('admin_user_edit', {'id': user.id}) }}" style="padding-right: 15px;"><i class="fa fa-edit"></i></a>
+                                           <a class="danger" href="{{ path('admin_user_delete', {'id':user.id}) }}" onclick="return confirm('Voulez vous vraiment supprimer {{ user.login }}')" style="padding-right: 3px; color: #AA3333"><i class="fa fa-trash"></i></a>
+                                       </td>
+                                   </tr>
+                                   {% endfor %}
+                                   </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Advance Table Row -->
+
             </div>
-            <table>
-                <thead>
-                <tr>
-                    <td>Login</td>
-                    <td>Roles</td>
-                    <td></td>
-                </tr>
-                </thead>
-                <tbody>
-                {% for user in users %}
-                <tr>
-                    <td>{{ user.login }}</td>
-                    <td>
-
-                        {% for role in user.roles %}
-                        {{ role }},
-                        {% endfor %}
-                    </td>
-
-                    <td>
-                    <td class="row-actions">
-                        <a href="{{ path('admin_user_edit', {'id': user.id}) }}"><ion-icon name="create-outline"></ion-icon></a>
-                        <a class="danger" href="{{ path('admin_user_delete', {'id':user.id}) }}" onclick="return confirm('Voulez vous vraiment supprimer {{ user.login }}')"><ion-icon name="trash-outline" style="color: #AA3333"></ion-icon></a>
-                    </td>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
         </div>
-    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<!-- Datatables -->
+
+<script src="{{ asset('assets/plugins/datatables/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/buttons.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/responsive.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/js/vfs_fonts.js') }}"></script>
+
+<!-- Form Wizard Custom JS For Only This Page -->
+<script src="{{ asset('assets/js/advance_table_custom.js') }}"></script>
 {% endblock %}

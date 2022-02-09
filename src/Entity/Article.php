@@ -47,20 +47,12 @@ class Article
      */
     private $summary;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=choice::class, inversedBy="articles")
-     */
-    private $choice;
 
     /**
      * @ORM\ManyToOne(targetEntity=category::class, inversedBy="articles")
      */
     private $category;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=language::class, inversedBy="articles")
-     */
-    private $language;
 
     public function getId(): ?int
     {
@@ -139,17 +131,6 @@ class Article
         return $this;
     }
 
-    public function getChoice(): ?choice
-    {
-        return $this->choice;
-    }
-
-    public function setChoice(?choice $choice): self
-    {
-        $this->choice = $choice;
-
-        return $this;
-    }
 
     public function getCategory(): ?category
     {
@@ -163,15 +144,4 @@ class Article
         return $this;
     }
 
-    public function getLanguage(): ?language
-    {
-        return $this->language;
-    }
-
-    public function setLanguage(?language $language): self
-    {
-        $this->language = $language;
-
-        return $this;
-    }
 }

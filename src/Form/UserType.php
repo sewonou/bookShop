@@ -16,8 +16,8 @@ class UserType extends ApplicationType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('login', TextType::class, $this->getConfiguration( 'Login', "Saisir lelgin de l'utilisateur"))
-            ->add('hash', PasswordType::class, $this->getConfiguration('Login', "Saisir le mot de passe de l'utilisateur"))
+            ->add('login', TextType::class, $this->getConfiguration( 'Identifiant', "Saisir lelgin de l'utilisateur"))
+            ->add('hash', PasswordType::class, $this->getConfiguration('Mot de passe', "Saisir le mot de passe de l'utilisateur"))
             ->add('userRoles', EntityType::class, $this->getConfiguration("Niveau d'accès", "Choisir le niveau d'accès ", [
                 'class' => Role::class,
                 'choice_label' => 'title',

@@ -31,6 +31,8 @@
         <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-select/css/bootstrap-select.min.css') }}">
         <!-- Summernote CSS -->
         <link rel="stylesheet" href="{{ asset('assets/plugins/summernote/css/summernote.css') }}">
+
+        {% block stylesheets %}{% endblock %}
         <!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/seipkon.css') }}">
         <!-- Responsive CSS -->
@@ -50,14 +52,28 @@
             {% include 'admin/partials/topbar.html.twig' %}
 
             {% include 'admin/partials/navigation.html.twig' %}
-            {% block body %}
+            <!-- Right Side Content Start -->
+            <section id="content" class="seipkon-content-wrapper">
+                {% for label, messages in app.flashes %}
+                    <div class="container">
+                        <div class="alert alert-{{ label }}">
+                            {% for message in messages %}
+                                <button aria-label="Close" class="close" data-dismiss="alert" type="button"><span aria-hidden="true"> &times; </span></button>
+                                <p>{{ message | raw }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                {% block body %}
 
-            {% endblock %}
-
+                {% endblock %}
+                {% include 'admin/partials/footer.html.twig' %}
+            </section>
+            <!-- End Right Side Content -->
 
         </div>
         <!-- End Wrapper -->
-        {% block javascripts %}{% endblock %}
+
         <!-- jQuery -->
         <script src="{{ asset('assets/js/jquery-3.1.0.min.js') }}"></script>
         <!-- Bootstrap JS -->
@@ -81,6 +97,9 @@
         <script src="{{ asset('assets/plugins/charts/js/Chart.js') }}"></script>
         <!-- Datatables -->
         <script src="{{ asset('assets/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+
+        {% block javascripts %}{% endblock %}
+
         <!-- Perfect Scrollbar JS -->
         <script src="{{ asset('assets/plugins/perfect-scrollbar/jquery-perfect-scrollbar.min.js') }}"></script>
         <!-- Vue JS -->
@@ -88,6 +107,9 @@
         <!-- Summernote JS -->
         <script src="{{ asset('assets/plugins/summernote/js/summernote.js') }}"></script>
         <script src="{{ asset('assets/plugins/summernote/js/custom-summernote.js') }}"></script>
+
+
+
         <!-- Dashboard JS -->
         <script src="{{ asset('assets/js/dashboard.js') }}"></script>
         <!-- Custom JS -->

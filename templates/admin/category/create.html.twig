@@ -1,7 +1,6 @@
 {% extends 'admin/base.html.twig' %}
-{% block title %}
 
-{% endblock %}
+{% block title %}Ajouter Catégorie{% endblock %}
 {% block body %}
     <div class="page-content">
         <div class="container-fluid">
@@ -13,15 +12,15 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="seipkon-breadcromb-left">
-                                    <h3>Editer l'utilisateur {{ user.login }}</h3>
+                                    <h3>Créer une nouvelle catégorie d'article</h3>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <div class="seipkon-breadcromb-right">
                                     <ul>
                                         <li><a href="{{ path('admin') }}">Tableau de bord</a></li>
-                                        <li>Utilisateur</li>
-                                        <li>Editer</li>
+                                        <li>Catégorie</li>
+                                        <li>Ajouter une catégorie</li>
                                     </ul>
                                 </div>
                             </div>
@@ -36,7 +35,7 @@
                 <div class="col-md-12">
                     <div class="page-box">
                         <div class="form-example">
-                            <h3>Créer un nouvel utilisateur</h3>
+                            <h3>Créer une nouvelle catégorie</h3>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
                                     <div class="form-wrap">
@@ -44,13 +43,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    {{ form_row(form.login) }}
-                                                </div>
-                                                <div class="form-group">
-                                                    {{ form_row(form.hash) }}
-                                                </div>
-                                                <div class="form-group">
-                                                    {{ form_row(form.userRoles) }}
+                                                    {{ form_row(form.name) }}
                                                 </div>
                                             </div>
                                         </div>
@@ -84,9 +77,6 @@
 
 {% block javascripts %}
 
-    <!-- General Form Custom JS For Only This Page -->
-    <script src="{{ asset('assets/js/general_form_custom.js') }}"></script>
+<!-- General Form Custom JS For Only This Page -->
+<script src="{{ asset('assets/js/general_form_custom.js') }}"></script>
 {% endblock %}
-
-
-

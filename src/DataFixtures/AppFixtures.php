@@ -32,15 +32,15 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setLogin('root')
             ->setHash($this->encoder->encodePassword($user, 'password'))
-            ->addRole($roleUser)
-            ->addRole($roleAdmin);
+            ->addUserRole($roleUser)
+            ->addUserRole($roleAdmin);
 
         $manager->persist($user);
 
         $user = new User();
         $user->setLogin('sewonou')
             ->setHash($this->encoder->encodePassword($user, 'password'))
-            ->addRole($roleUser);
+            ->addUserRole($roleUser);
 
         $manager->persist($user);
 

@@ -3,46 +3,88 @@
 
 {% endblock %}
 {% block body %}
-    <div class="content">
-        <!-- order detail list-->
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="element-wrapper">
-                    <div class="element-box">
-                        <h5 class="form-header">
-                            Enregistrement d'un nouvel utilisateur
-                        </h5>
-                        {{ form_start(form) }}
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <fieldset class="form-group">
-                                    <legend><span>Identifiant</span></legend>
-                                    {{ form_row(form.login) }}
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            {{ form_row(form.hash) }}
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-9">
-                                            {{ form_row(form.userRoles,  {'attr': {'class': 'select2'}}) }}
-                                        </div>
-                                    </div>
+    <div class="page-content">
+        <div class="container-fluid">
 
-                                </fieldset>
+            <!-- Breadcromb Row Start -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-area">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="seipkon-breadcromb-left">
+                                    <h3>Créer un nouvel utilisateur</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="seipkon-breadcromb-right">
+                                    <ul>
+                                        <li><a href="{{ path('admin') }}">Tableau de bord</a></li>
+                                        <li>Les utilisateurs</li>
+                                        <li>Ajouter un utilisateur</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-buttons-w text-right compact">
-                            <button class="btn btn-primary" type="submit"> Valider</button>
-                        </div>
-                        {{ form_end(form) }}
                     </div>
                 </div>
-
             </div>
+            <!-- End Breadcromb Row -->
+
+            <!-- Form Row Start -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-box">
+                        <div class="form-example">
+                            <h3>Créer un nouvel utilisateur</h3>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-wrap">
+                                    {{ form_start(form) }}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form_row(form.login) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_row(form.hash) }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_row(form.userRoles) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-layout-submit">
+                                                        <button type="submit" class="btn btn-info" >Valider</button>
+                                                        <button type="reset" class="btn btn-danger">Annuler</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Form Row -->
         </div>
     </div>
 {% endblock %}
 
+{% block stylesheets %}
 
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- General Form Custom JS For Only This Page -->
+    <script src="{{ asset('assets/js/general_form_custom.js') }}"></script>
+{% endblock %}
 
