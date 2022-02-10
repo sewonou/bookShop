@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LanguageRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -25,19 +26,36 @@ class Language
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="language")
-     */
-    private $articles;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $slug;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Article::class, mappedBy="languages")
+     */
+    private $articles;
 
     public function __construct()
     {
         $this->articles = new ArrayCollection();
     }
+
+    /**
+     * Permet de créer un slug !!
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     *
+     */
+    public function initializeSlug()
+    {
+
+        if(empty($this->slug)){
+            $slugify = new Slugify();
+            $this->slug = $slugify->slugify($this->name);
+        }
+        return $this->slug;
+    }
+
 
     public function getId(): ?int
     {
@@ -56,6 +74,19 @@ class Language
         return $this;
     }
 
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Article[]
      */
@@ -68,7 +99,7 @@ class Language
     {
         if (!$this->articles->contains($article)) {
             $this->articles[] = $article;
-            $article->setLanguage($this);
+            $article->addLanguage($this);
         }
 
         return $this;
@@ -77,23 +108,8 @@ class Language
     public function removeArticle(Article $article): self
     {
         if ($this->articles->removeElement($article)) {
-            // set the owning side to null (unless already changed)
-            if ($article->getLanguage() === $this) {
-                $article->setLanguage(null);
-            }
+            $article->removeLanguage($this);
         }
-
-        return $this;
-    }
-
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
-
-    public function setSlug(?string $slug): self
-    {
-        $this->slug = $slug;
 
         return $this;
     }

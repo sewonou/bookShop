@@ -2,25 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Language;
+use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class LanguageType extends ApplicationType
+class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, $this->getConfiguration("Titre de la langue", "Saisir le titre de la langue"))
+            ->add('name')
+            ->add('image')
+            ->add('qte')
+            ->add('price')
+            ->add('description')
+            ->add('summary')
+            ->add('category')
+            ->add('languages')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Language::class,
+            'data_class' => Article::class,
         ]);
     }
 }

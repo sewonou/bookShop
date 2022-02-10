@@ -1,0 +1,96 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Langues{% endblock %}
+
+{% block body %}
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- Breadcromb Row Start -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-area">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="seipkon-breadcromb-left">
+                                    <h3>Liste des categories</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="seipkon-breadcromb-right">
+                                    <ul>
+                                        <li><a href="{{ path('admin') }}">Tableau de bord</a></li>
+                                        <li>Categories</li>
+                                        <li>Toutes les langues</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Breadcromb Row -->
+
+
+            <!-- Advance Table Row Start -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-box">
+                        <div class="datatables-example-heading">
+                            <h3>Toutes les langues</h3>
+                        </div>
+                        <p>Liste de toutes  les catégories de langue d'articles pouvant être enregistrer</p>
+                        <div class="advance-table">
+                            <table id="responsive_datatables_example" class="table display table-striped table-bordered responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Nom de la langue</th>
+                                    <th>slug</th>
+                                    <th>Nombre d'article</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for language in languages %}
+                                    <tr>
+                                        <td>{{ language.name }}</td>
+                                        <td>{{ language.slug }}</td>
+                                        <td>{#{{ language.articles.count }}#}</td>
+                                        <td style="text-align: end; width: 20px">
+                                            <a href="{{ path('admin_language_edit', {'id': language.id}) }}" style="padding-right: 15px;"><i class="fa fa-edit"></i></a>
+                                            <a class="danger" href="{{ path('admin_language_delete', {'id':language.id}) }}" onclick="return confirm('Voulez vous vraiment supprimer {{language.name }}')" style="padding-right: 3px; color: #AA3333"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Advance Table Row -->
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <!-- Datatables -->
+
+    <script src="{{ asset('assets/plugins/datatables/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/responsive.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/datatables/js/vfs_fonts.js') }}"></script>
+
+    <!-- Form Wizard Custom JS For Only This Page -->
+    <script src="{{ asset('assets/js/advance_table_custom.js') }}"></script>
+{% endblock %}
